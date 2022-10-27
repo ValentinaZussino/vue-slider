@@ -60,5 +60,19 @@ createApp({
                     }
                 ]
         }
+    }, 
+    methods: {
+        prevGame(){
+            this.activeIndex--;
+            if(this.activeIndex < 0){
+                this.activeIndex = this.games.length - 1
+            }
+        },
+        nextGame(){
+            this.activeIndex++;
+            if(this.activeIndex > this.games.length - 1){
+                this.activeIndex = 0
+            }
+        }
     }
 }).mount('#app')

@@ -26,8 +26,8 @@
                 </div>
 
                 <div class="thumbs">
-                    <div class="prev"></div>
-                    <div class="next"></div>
+                    <div class="prev" @click="prevGame()"></div>
+                    <div class="next" @click="nextGame()"></div>
                     <div class="thumb active">
                         <img v-for="(g,index) in games" :key="index" :src="games[index].image" :alt="games[index].title"/>
                     </div>
