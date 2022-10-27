@@ -28,7 +28,7 @@
                 <div class="thumbs">
                     <div class="prev" @click="prevGame()"></div>
                     <div class="next" @click="nextGame()"></div>
-                    <div v-for="(g,index) in games" :key="index" :class="index === activeIndex ? 'active' : '' " class="thumb">
+                    <div v-for="(g,index) in games" :key="index" :class="index === activeIndex ? 'active' : '' " class="thumb" @click="showBigImg(index)">
                         <img  :src="games[index].image" :alt="games[index].title"/>
                     </div>
                 </div>

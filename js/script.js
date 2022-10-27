@@ -83,6 +83,9 @@ createApp({
         stopScroll(){
             clearInterval(this.autoscroll);
             this.autoscroll = null;
+        },
+        showBigImg(smallImgIndex){
+            this.activeIndex = smallImgIndex;
         }
     },
     mounted(){
