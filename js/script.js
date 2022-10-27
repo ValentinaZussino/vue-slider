@@ -36,6 +36,7 @@ createApp({
     data(){
         return {
             activeIndex: 0,
+            autoscroll: null,
             games:[
                 {
                     image: 'img/01.webp',
@@ -73,6 +74,18 @@ createApp({
             if(this.activeIndex > this.games.length - 1){
                 this.activeIndex = 0
             }
+        }, 
+        autoScroll(){
+            this.autoscroll = setInterval(()=>{
+                this.nextGame()
+            }, 2500)
+        },
+        stopScroll(){
+            clearInterval(this.autoscroll);
+            this.autoscroll = null;
         }
+    },
+    mounted(){
+        this.autoScroll()
     }
 }).mount('#app')
